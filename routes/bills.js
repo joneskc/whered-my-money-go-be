@@ -41,7 +41,7 @@ function getOne(req, res, next) {
     knex('bills')
         .select('*')
         .limit(1)
-        .where({ id: req.params.id })
+        .where({ id: req.params.billsId })
         .then(([bill]) => {
             if (!bill) return res.status(404).send({ message: 'bill not found.' })
             res.status(200).send({ data: bill })
@@ -60,7 +60,7 @@ function create(req, res, next) {
 function update(req, res, next) {
     // TODO: Validate input data
     knex('bills')
-        .where({ id: req.params.id })
+        .where({ id: req.params.billsId })
         .update(req.body)
         .then(count => count >= 1
             ? res.status(200).json({ data: req.body })
@@ -70,7 +70,7 @@ function update(req, res, next) {
 
 function remove(req, res, next) {
     // TODO: Validate authentication
-    knex('bills').where({ id: req.params.id })
+    knex('bills').where({ id: req.params.billsId })
         .delete()
         .then(count => count >= 1
             ? res.status(204).json()
