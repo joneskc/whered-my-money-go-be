@@ -5,6 +5,7 @@ exports.up = function (knex, Promise) {
         table.text('name')
         table.float('amount')
         table.date('dueDate')
+        table.text('status')
     })
 };
 

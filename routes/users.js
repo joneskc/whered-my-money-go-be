@@ -42,7 +42,7 @@ function getOne(req, res, next) {
         .select('*')
         .limit(1)
         .where({ id: req.params.id })
-        .then(([user]) => {
+        .then((user) => {
             if (!user) return res.status(404).send({ message: 'user not found.' })
             res.status(200).send({ data: user })
         })

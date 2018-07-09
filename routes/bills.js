@@ -9,7 +9,7 @@ const knex = require('../db/knex') // TODO: Adjust path as needed!
 const router = module.exports = require('express').Router();
 
 router.get('/', getAll)
-router.get('/:id', getOne)
+router.get('/:id', getOneUserBills)
 router.post('/', create)
 router.put('/:id', update)
 router.delete('/:id', remove)
@@ -37,12 +37,11 @@ function getAll(req, res, next) {
         .catch(next)
 }
 
-function getOne(req, res, next) {
+function getOneUserBills(req, res, next) {
     knex('bills')
         .select('*')
-        .limit(1)
-        .where({ id: req.params.billsId })
-        .then(([bill]) => {
+        .where({ userId: req.params.id })
+        .then((bill) => {
             if (!bill) return res.status(404).send({ message: 'bill not found.' })
             res.status(200).send({ data: bill })
         })
