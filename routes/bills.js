@@ -69,7 +69,7 @@ function update(req, res, next) {
 
 function remove(req, res, next) {
     // TODO: Validate authentication
-    knex('bills').where({ id: req.params.billsId })
+    knex('bills').where({ id: req.params.id })
         .delete()
         .then(count => count >= 1
             ? res.status(204).json()
