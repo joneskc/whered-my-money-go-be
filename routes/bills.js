@@ -59,7 +59,7 @@ function create(req, res, next) {
 function update(req, res, next) {
     // TODO: Validate input data
     knex('bills')
-        .where({ id: req.params.billsId })
+        .where({ id: req.params.id })
         .update(req.body)
         .then(count => count >= 1
             ? res.status(200).json({ data: req.body })
