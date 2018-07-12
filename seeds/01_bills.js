@@ -11,7 +11,7 @@ exports.seed = function(knex, Promise) {
           name: 'Mortgage',
           amount: 1400,
           dueDate: '2018-08-01',
-          status: 'unpaid'
+          status: 'Unpaid'
         },
         {
           id: 10000002,
@@ -19,7 +19,7 @@ exports.seed = function(knex, Promise) {
           name: 'Rent',
           amount: 1800,
           dueDate: '2018-08-01',
-          status: 'unpaid'
+          status: 'Unpaid'
         },
         {
           id: 10000003,
@@ -27,7 +27,7 @@ exports.seed = function(knex, Promise) {
           name: 'Rent',
           amount: 2200,
           dueDate: '2018-08-05',
-          status: 'unpaid'
+          status: 'Unpaid'
         },
         {
           id: 10000004,
@@ -35,7 +35,7 @@ exports.seed = function(knex, Promise) {
           name: 'Car',
           amount: 250,
           dueDate: '2018-08-01',
-          status: 'unpaid'
+          status: 'Unpaid'
         },
         {
           id: 10000005,
@@ -43,7 +43,7 @@ exports.seed = function(knex, Promise) {
           name: 'Car Insurance',
           amount: 140,
           dueDate: '2018-08-01',
-          status: 'unpaid'
+          status: 'Unpaid'
         },
         {
           id: 10000006,
@@ -51,7 +51,7 @@ exports.seed = function(knex, Promise) {
           name: 'Scooter',
           amount: 40,
           dueDate: '2018-08-12',
-          status: 'unpaid'
+          status: 'Unpaid'
         },
         {
           id: 10000007,
@@ -59,7 +59,7 @@ exports.seed = function(knex, Promise) {
           name: 'Cable',
           amount: 150,
           dueDate: '2018-08-10',
-          status: 'unpaid'
+          status: 'Unpaid'
         },
         {
           id: 10000008,
@@ -67,7 +67,7 @@ exports.seed = function(knex, Promise) {
           name: 'Gym',
           amount: 85,
           dueDate: '2018-08-11',
-          status: 'paid'
+          status: 'Paid'
         }
       ]);
     })
