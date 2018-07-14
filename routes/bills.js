@@ -41,7 +41,7 @@ function getOneUserBills(req, res, next) {
     knex('bills')
         .select('*')
         .where({ userId: req.params.id })
-        .orderBy('dueDate', 'desc')
+        .orderBy('dueDate', 'asc')
         .then((bill) => {
             if (!bill) return res.status(404).send({ message: 'bill not found.' })
             res.status(200).send({ data: bill })
