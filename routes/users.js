@@ -41,7 +41,7 @@ function getOne(req, res, next) {
     knex('users')
         .select('*')
         .limit(1)
-        .where({ username: req.params.userName })
+        .where({ userName: req.params.userName })
         .then((user) => {
             if (!user) return res.status(404).send({ message: 'user not found.' })
             res.status(200).send({ data: user })
